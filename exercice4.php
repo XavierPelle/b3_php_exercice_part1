@@ -10,3 +10,25 @@
  * En dessous la classe instancier un objet et afficher les infos
 
  */
+
+class Article
+{
+    public function __construct(
+        protected string $title,
+        protected string $content,
+    ) {
+        $this->title = $title;
+        $this->content = $content;
+    }
+
+    public function getSummary($maxLength): string
+    {
+        $count = strlen($this->title);
+        $slice = $count - $maxLength;
+        return substr($this->title, 0, $slice) . "..." . " " . substr($this->content, 0, $slice) . "...";
+    }
+}
+
+$article = new article("Titreeeee", "Contenteeeee");
+
+echo $article->getSummary(5);

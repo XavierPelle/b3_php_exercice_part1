@@ -1,0 +1,8 @@
+services:
+  php:
+    build: 
+      context: .
+    ports:
+      - "8101:8101"
+    volumes:
+      - ./:/var/www/html
